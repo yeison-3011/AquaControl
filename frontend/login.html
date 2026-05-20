@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login AquaControl</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="auth-body">
+
+    <div class="auth-container">
+
+        <h1>AquaControl Cali 🚰</h1>
+
+        <div class="card">
+
+            <h2>Iniciar Sesión</h2>
+
+            <form id="formLogin">
+
+                <input
+                    type="email"
+                    id="loginCorreo"
+                    placeholder="Correo"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Contraseña"
+                    required
+                >
+
+                <button type="submit">
+                    Ingresar
+                </button>
+
+            </form>
+
+            <button onclick="window.location.href='registro.html'">
+                Registrarse
+            </button>
+
+            <p id="mensajeLogin"></p>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

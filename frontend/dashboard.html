@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaControl</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            AquaControl Cali 🚰
+        </div>
+
+        <ul class="menu">
+
+            <li onclick="mostrarSeccion('consumo')">
+                Registrar Consumo
+            </li>
+
+            <li onclick="mostrarSeccion('reportes')">
+                Reportes
+            </li>
+
+            <li onclick="cerrarSesion()" class="logout">
+                Cerrar Sesión
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <div class="container">
+
+        <p id="usuarioActivo"></p>
+
+        <div id="seccionConsumo">
+
+            <div class="card">
+
+                <h2>Registrar Consumo</h2>
+
+                <form id="formConsumo">
+
+                    <input
+                        type="number"
+                        id="litros"
+                        placeholder="Litros consumidos"
+                        required
+                    >
+
+                    <input
+                        type="date"
+                        id="fecha"
+                        required
+                    >
+
+                    <button type="submit">
+                        Registrar
+                    </button>
+
+                </form>
+
+                <p id="mensaje"></p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>Consumo del Hogar</h2>
+
+                <canvas id="graficaConsumo"></canvas>
+
+            </div>
+
+        </div>
+
+        <div id="seccionReportes" style="display:none;">
+
+            <div class="estadisticas">
+
+                <div class="card-estadistica">
+
+                    <h3>Total Consumo</h3>
+
+                    <p id="totalLitros">0 Litros</p>
+
+                </div>
+
+                <div class="card-estadistica">
+
+                    <h3>Promedio</h3>
+
+                    <p id="promedioLitros">0 Litros</p>
+
+                </div>
+
+                <div class="card-estadistica">
+
+                    <h3>Estado</h3>
+
+                    <p id="estadoConsumo">Normal</p>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h2>Historial de Consumos</h2>
+                <hr>
+
+                <ul id="listaConsumos"></ul>
+
+                <button onclick="exportarPDF()">
+                    Descargar PDF
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
